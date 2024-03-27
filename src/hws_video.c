@@ -3413,7 +3413,7 @@ int hws_audio_register(struct hws_pcie_dev *dev)
 		 snd_pcm_lib_preallocate_pages_for_all(
             pcm,
             SNDRV_DMA_TYPE_CONTINUOUS,
-            snd_dma_continuous_data(GFP_KERNEL),
+            &dev->pdev->dev,
             audio_pcm_hardware.buffer_bytes_max,
             audio_pcm_hardware.buffer_bytes_max
             );
